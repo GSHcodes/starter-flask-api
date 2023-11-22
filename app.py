@@ -14,6 +14,7 @@ def index():
         amount_source = data['queryResult']['parameters']['unit-currency']['amount']
         to_currency = data['queryResult']['parameters']['currency-name']
         converted = currency.convert(source_currency, to_currency, amount_source)
+        print(str(amount_source) + " " + source_currency + " is equivalent to " + str(converted) + " " + to_currency)
         response = {
             'fulfillmentText': "{}  {}  is equivalent to  {}  {}".format(amount_source,source_currency,round(converted,2),to_currency),  # You can modify this message accordingly
             # Additional fields if needed
